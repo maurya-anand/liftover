@@ -2,20 +2,20 @@
 
 # liftover.hg19.to.hg38.sh
 #
-# This script is used to convert a tab-delimited file into a VCF (Variant Call Format) file using the convert_to_vcf.py Python script.
-# It then compresses the VCF file, generates an index, and performs a liftover operation to convert the variants from one genome build to another.
+# This script converts of genomic coordinates from the Human Genome version 19 (hg19) to version 38 (hg38) using bcftool's liftover plugin.
+# It takes as input a tab-separated values (TSV) file containing variant information with columns specifying chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt). 
 #
 # Usage:
-#   ./liftover.hg19.to.hg38.sh <input_tab_file> <output_prefix>
+#   bash liftover.hg19.to.hg38.sh <input_tab_file> <output_prefix>
 #
 # Parameters:
 #   input_tab_file: The input file which should be a tab-delimited file with the following columns: chr, pos, id, ref, and alt.
 #   output_prefix: The prefix for the output file. The script will add a .vcf extension to this prefix to create the output file name.
 #
 # Example:
-#   ./liftover.hg19.to.hg38.sh test.tsv temp_vcf
+#   bash liftover.hg19.to.hg38.sh test.tsv test_set
 #
-# This will create a VCF file named temp_vcf.vcf from the input file test.tsv, and perform a liftover operation to create a new VCF file named temp_vcf_lo_hg19Tohg38.vcf.
+# This will create the output file test_set_lo_variants.tsv in the test_set_liftover_results directory.
 
 VAR_TAB_FILE=$1
 OUT_PREFIX=$2
