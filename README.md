@@ -1,4 +1,4 @@
-# liftover.hg19.to.hg38.sh
+# liftover_hg19_to_hg38.sh
 
 This script converts of genomic coordinates from the Human Genome version 19 (hg19) to version 38 (hg38) using bcftool's liftover plugin. It takes as input a tab-separated values (TSV) file containing variant information with columns specifying chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
 
@@ -20,7 +20,7 @@ This command will also create a directory named `genomes` and store the download
 
 ```bash
 cd liftover
-bash liftover.hg19.to.hg38.sh <input_tab_file> <output_prefix>
+bash liftover_hg19_to_hg38.sh <input_tab_file> <output_prefix>
 ```
 
 ### Parameters
@@ -43,7 +43,7 @@ cat test/test.tsv
 
 ```bash
 cd liftover
-bash liftover.hg19.to.hg38.sh test/test.tsv test_set
+bash liftover_hg19_to_hg38.sh test/test.tsv test_set
 ```
 
 This command will create a directory named `<prefix>_liftover_results`, where <prefix> is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
