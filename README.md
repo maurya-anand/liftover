@@ -33,7 +33,7 @@ bash liftover.hg19.to.hg38.sh <input_tab_file> <output_prefix>
 #### Input file
 
 ```bash
-cat test.tsv
+cat test/test.tsv
 1	818046	.	T	C
 2	265023	.	C	A
 3	361463	.	G	T
@@ -43,7 +43,7 @@ cat test.tsv
 
 ```bash
 cd liftover
-bash liftover.hg19.to.hg38.sh test.tsv test_set
+bash liftover.hg19.to.hg38.sh test/test.tsv test_set
 ```
 
 This command will create a directory named `<prefix>_liftover_results`, where <prefix> is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
