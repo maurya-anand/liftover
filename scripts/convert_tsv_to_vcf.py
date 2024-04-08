@@ -46,10 +46,10 @@ def create_vcf(input_file, output_file):
 
     # Write the DataFrame to the output file in VCF format
     with open(output_file, 'w') as vcf_out:
-        vcf_out.write("##fileformat=VCFv4.2\n")
+        vcf_out.write("##fileformat=VCFv4.2\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">\n")
         vcf_out.write(f"#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\t{sample_name}\n")
         for _, row in df.iterrows():
-            vcf_out.write(f"{row['chr']}\t{row['pos']}\t{row['id']}\t{row['ref']}\t{row['alt']}\t.\t.\t.\t.\t.\n")
+            vcf_out.write(f"{row['chr']}\t{row['pos']}\t{row['id']}\t{row['ref']}\t{row['alt']}\t.\t.\t.\tGT\t0/1\n")
     
 
 if __name__ == "__main__":
