@@ -1,0 +1,9 @@
+data/
+genomes/
+notes-comments.txt
+tools/
+test/
+*.md
+
+
+
