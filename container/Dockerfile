@@ -11,7 +11,8 @@ RUN apt-get update \
 
 RUN make install
 
-# adding the path to the tools managed by mamba
+RUN chmod +x /scripts/liftover_hg19_to_hg38.sh
+
 ENV PATH="/scripts/tools/bin:$PATH"
 
 CMD ["bash","/scripts/liftover_hg19_to_hg38.sh"]
