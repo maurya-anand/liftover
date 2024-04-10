@@ -1,13 +1,13 @@
 # liftover_hg19_to_hg38.sh
 
-This script converts of genomic coordinates from the Human Genome version 19 (hg19) to version 38 (hg38) using bcftool's liftover plugin. It takes as input a tab-separated values (TSV) file containing variant information with columns specifying chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
+This script performs the conversion of genomic coordinates from Human Genome version 19 (hg19) to version 38 (hg38) using the liftover plugin from bcftools. It takes a tab-separated values (TSV) file as input. This file should contain variant information with columns denoting chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
 
 ## Installation
 
 > [!IMPORTANT]  
-> The script requires `python3` with the `pandas` library installed.
+> Please note that this script requires `python3` and the `pandas` library.
 
-To install the necessary tools, including `bcftools`, `htslib` and the `liftover plugin`, and to download the required genome files (hg19.fa, hg38.fa and hg19ToHg38.over.chain.gz), run the following command:
+To install the necessary tools, which include `bcftools`, `htslib`, and the `liftover plugin`, and to download the required genome files (hg19.fa, hg38.fa and hg19ToHg38.over.chain.gz), execute the following command:
 
 ```bash
 cd liftover
@@ -49,10 +49,9 @@ docker run -v $(pwd):/data -it ghcr.io/maurya-anand/liftover /scripts/liftover_h
 
 The output from the above command will be saved in a directory named `docker_test_liftover_results` in your current directory.
 
-In this command, `-v $(pwd):/data` mounts your current directory to the `/data` directory in the Docker container. 
+In this command, `-v $(pwd):/data` mounts your current directory to the `/data` directory in the Docker container.
 
 Replace `/data/test/test.tsv` with your input file, `docker_test` with your desired output prefix, and `/data` with your desired output directory.
-
 
 ### Example usage
 
