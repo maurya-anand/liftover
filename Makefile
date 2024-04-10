@@ -15,28 +15,28 @@ install: $(dir)/genomes/hg19.fa $(dir)/genomes/hg38.fa $(dir)/genomes/hg19ToHg38
 
 $(dir)/genomes/hg19.fa:
 	@mkdir -p $(dir)/genomes
-	@wget https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz -O $(dir)/genomes/hg19.fa.gz
+	@wget --no-check-certificate https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz -O $(dir)/genomes/hg19.fa.gz
 	@gunzip $(dir)/genomes/hg19.fa.gz
 
 $(dir)/genomes/hg38.fa:
 	@mkdir -p $(dir)/genomes
-	@wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz -O $(dir)/genomes/hg38.fa.gz
+	@wget --no-check-certificate https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz -O $(dir)/genomes/hg38.fa.gz
 	@gunzip $(dir)/genomes/hg38.fa.gz
 
 $(dir)/genomes/hg19ToHg38.over.chain.gz:
 	@mkdir -p $(dir)/genomes
-	@wget https://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz -O $(dir)/genomes/hg19ToHg38.over.chain.gz
+	@wget --no-check-certificate https://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz -O $(dir)/genomes/hg19ToHg38.over.chain.gz
 
 $(dir)/tools/libexec/bcftools/liftover.so:
 	@mkdir -p $(dir)/tools
-	@wget https://github.com/samtools/bcftools/releases/download/1.19/bcftools-1.19.tar.bz2 -O $(dir)/tools/bcftools-1.19.tar.bz2
+	@wget --no-check-certificate https://github.com/samtools/bcftools/releases/download/1.19/bcftools-1.19.tar.bz2 -O $(dir)/tools/bcftools-1.19.tar.bz2
 	@tar -xjf $(dir)/tools/bcftools-1.19.tar.bz2 -C $(dir)/tools
 	@cd $(dir)/tools/bcftools-1.19 && ./configure --prefix=$(dir)/tools && make && make install
 
-	@wget https://software.broadinstitute.org/software/score/score_1.19-dev.zip -O $(dir)/tools/score_1.19-dev.zip
+	@wget --no-check-certificate https://software.broadinstitute.org/software/score/score_1.19-dev.zip -O $(dir)/tools/score_1.19-dev.zip
 	@unzip $(dir)/tools/score_1.19-dev.zip -d $(dir)/tools/libexec/bcftools
 	
-	@wget https://github.com/samtools/htslib/releases/download/1.19.1/htslib-1.19.1.tar.bz2 -O $(dir)/tools/htslib-1.19.1.tar.bz2
+	@wget --no-check-certificate https://github.com/samtools/htslib/releases/download/1.19.1/htslib-1.19.1.tar.bz2 -O $(dir)/tools/htslib-1.19.1.tar.bz2
 	@tar -xjf $(dir)/tools/htslib-1.19.1.tar.bz2 -C $(dir)/tools
 	@cd $(dir)/tools/htslib-1.19.1 && ./configure --prefix=$(dir)/tools && make && make install
 
