@@ -18,13 +18,18 @@ This command will also create a directory named `genomes` and store the download
 
 ## Usage
 
+### Parameters
+
+- `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
+- `output_prefix`: Prefix for the output file.
+
 ### Command line
 
 After installing the necessary tools and downloading the required genome files using the steps provided in the "Installation" section, you can run the script as follows:
 
 ```bash
 cd liftover
-bash liftover_hg19_to_hg38.sh <input_tab_file> <output_prefix>
+bash liftover_hg19_to_hg38.sh <input_tab_file> <output_prefix> <output_directory>
 ```
 
 ### Docker
@@ -42,14 +47,12 @@ cd liftover
 docker run -v $(pwd):/data -it ghcr.io/maurya-anand/liftover /scripts/liftover_hg19_to_hg38.sh /data/test/test.tsv docker_test /data
 ```
 
-In this command, `-v $(pwd):/data` mounts your current directory to the `/data` directory in the Docker container. Replace `<input_file>` with your input file and `<output_prefix>` with your desired output prefix.
+The output from the above command will be saved in a directory named `docker_test_liftover_results` in your current directory.
 
-The output will be saved in a directory named `<output_prefix>_liftover_results` in your current directory.
+In this command, `-v $(pwd):/data` mounts your current directory to the `/data` directory in the Docker container. 
 
-### Parameters
+Replace `/data/test/test.tsv` with your input file, `docker_test` with your desired output prefix, and `/data` with your desired output directory.
 
-- `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
-- `output_prefix`: Prefix for the output file.
 
 ### Example usage
 
@@ -70,7 +73,9 @@ bash liftover_hg19_to_hg38.sh test/test.tsv test_set
 ```
 
 This command will create a directory named `<prefix>_liftover_results`, where <prefix> is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
+
 The TSV file will contain the updated genome coordinates in the following order: chr, pos, id, ref, and alt.
+
 The id column will retain the original genomic coordinates from the input file.
 
 #### Output file
