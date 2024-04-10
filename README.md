@@ -56,6 +56,10 @@ Replace `/data/test/test.tsv` with your input file, `docker_test` with your desi
 
 ### Example usage
 
+> [!WARNING]
+> The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup.
+> The script also assumes that the input file is properly formatted and contains the necessary columns.
+
 #### Input file
 
 ```bash
@@ -103,9 +107,5 @@ chr3	319780	src:3:361463:G:T	G	T
   - [tabix](https://doi.org/10.1093/bioinformatics/btq671)
   - [bcftools](https://doi.org/10.1093/gigascience/giab008)
   - [liftover (plugin)](https://github.com/freeseek/score)
-- **Python3 packages**
+- **Python3 package**
   - pandas
-
-> [!WARNING]
-> The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup.
-> The script also assumes that the input file is properly formatted and contains the necessary columns.
