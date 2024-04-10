@@ -5,7 +5,7 @@ This script performs the conversion of genomic coordinates from Human Genome ver
 ## Installation
 
 > [!IMPORTANT]  
-> Please note that this script requires `python3` and the `pandas` library.
+> Please note that this script requires `python3` and the `pandas` library. However, if you are using the Docker image, these requirements are already included in the image.
 
 To install the necessary tools, which include `bcftools`, `htslib`, and the `liftover plugin`, and to download the required genome files (hg19.fa, hg38.fa and hg19ToHg38.over.chain.gz), execute the following command:
 
