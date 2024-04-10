@@ -18,10 +18,33 @@ This command will also create a directory named `genomes` and store the download
 
 ## Usage
 
+### Command line
+
+After installing the necessary tools and downloading the required genome files using the steps provided in the "Installation" section, you can run the script as follows:
+
 ```bash
 cd liftover
 bash liftover_hg19_to_hg38.sh <input_tab_file> <output_prefix>
 ```
+
+### Docker
+
+This package is also available as a Docker image, which can be pulled from the GitHub Container Registry using the following command:
+
+```bash
+docker pull ghcr.io/maurya-anand/liftover
+```
+
+You can run the Docker image as follows:
+
+```bash
+cd liftover
+docker run -v $(pwd):/data -it ghcr.io/maurya-anand/liftover /scripts/liftover_hg19_to_hg38.sh /data/test/test.tsv docker_test /data
+```
+
+In this command, `-v $(pwd):/data` mounts your current directory to the `/data` directory in the Docker container. Replace `<input_file>` with your input file and `<output_prefix>` with your desired output prefix.
+
+The output will be saved in a directory named `<output_prefix>_liftover_results` in your current directory.
 
 ### Parameters
 
