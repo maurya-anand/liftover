@@ -1,9 +1,5 @@
-import os
-import argparse
-import pandas as pd
-
 """
-convert_to_vcf.py
+convert_tsv_to_vcf.py
 
 This script is used to convert a tab-delimited file with specific columns into a VCF (Variant Call Format) file.
 
@@ -21,6 +17,10 @@ The script takes two command-line arguments:
 Example usage:
     python3 convert_tsv_to_vcf.py --tab temp_coordinates.txt --vcf temp_coordinates.vcf
 """
+
+import os
+import argparse
+import pandas as pd
 
 def create_vcf(input_file, output_file):
     """
