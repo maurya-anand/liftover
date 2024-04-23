@@ -54,9 +54,9 @@ ${TOOLS_DIR}/tabix -p vcf ${OUT_DIR}/${OUT_PREFIX}.vcf.gz
 # liftover variants
 ${TOOLS_DIR}/bcftools +liftover -Ov -o ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38.vcf ${OUT_DIR}/${OUT_PREFIX}.vcf.gz -- -s ${REFERENCE}/hg19.fa -f ${REFERENCE}/hg38.fa -c ${REFERENCE}/hg19ToHg38.over.chain.gz --reject ${OUT_DIR}/${OUT_PREFIX}.rejected.vcf -Ov --write-src
 
-${TOOLS_DIR}/bcftools norm -m-any ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38.vcf -Ov -o ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38_norm.vcf
+${TOOLS_DIR}/bcftools norm --rm-dup exact ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38.vcf -Ov -o ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38_norm.vcf
 
-${TOOLS_DIR}/bcftools query -f "%CHROM\t%POS\tsrc:%SRC_CHROM:%SRC_POS:%SRC_REF_ALT\t%REF\t%ALT" ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38_norm.vcf | sed 's/,/:/g' > ${OUT_DIR}/${OUT_PREFIX}_lo_variants.tsv
+${TOOLS_DIR}/bcftools query -f "%CHROM\t%POS\tsrc:%SRC_CHROM,%SRC_POS,%ID,%SRC_REF_ALT\t%REF\t%ALT" ${OUT_DIR}/${OUT_PREFIX}_lo_hg19Tohg38_norm.vcf | sed 's/,/:/g' > ${OUT_DIR}/${OUT_PREFIX}_lo_variants.tsv
 
 echo "Liftover variants list: ${OUT_DIR}/${OUT_PREFIX}_lo_variants.tsv"
 
