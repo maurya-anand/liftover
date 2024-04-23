@@ -96,11 +96,11 @@ Each variant is represented as a row with the following columns:
 
 `cat test_set_liftover_results/test_set_lo_variants.tsv`
 
-|        |          |     |     |                                                                |
-|--------|-------|---------|---------|---------------------------------------|
-| `chr1` | `882666` | `T` | `C` | `SRC_CHROM=1;SRC_POS=818046;SRC_ID=.;SRC_REF_ALT=T,C`          |
-| chr2   | 265023   | C   | A   | SRC_CHROM=2;SRC_POS=265023;SRC_ID=.;SRC_REF_ALT=C,A            |
-| chr3   | 319780   | G   | T   | SRC_CHROM=3;SRC_POS=361463;SRC_ID=3:361463:G:T;SRC_REF_ALT=G,T |
+|      |        |     |     |                                                                |
+|-------|---------|------|------|----------------------------------------|
+| chr1 | 882666 | T   | C   | SRC_CHROM=1;SRC_POS=818046;SRC_ID=.;SRC_REF_ALT=T,C            |
+| chr2 | 265023 | C   | A   | SRC_CHROM=2;SRC_POS=265023;SRC_ID=.;SRC_REF_ALT=C,A            |
+| chr3 | 319780 | G   | T   | SRC_CHROM=3;SRC_POS=361463;SRC_ID=3:361463:G:T;SRC_REF_ALT=G,T |
 
 ## Steps
 
