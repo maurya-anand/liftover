@@ -59,7 +59,7 @@ Replace `/data/test/test.tsv` with your input file, `docker_test` with your desi
 
 ### Example usage
 
-> \[!WARNING\] The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup. The script also assumes that the input file is properly formatted and contains the necessary columns.
+> [!WARNING] The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup. The script also assumes that the input file is properly formatted and contains the necessary columns.
 
 #### Input file
 
