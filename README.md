@@ -1,6 +1,8 @@
 # liftover_hg19_to_hg38.sh
 
-This script performs the conversion of genomic coordinates from Human Genome version 19 (hg19) to version 38 (hg38) using the liftover plugin from bcftools. It takes a tab-separated values (TSV) file as input. This file should contain variant information with columns denoting chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
+This script performs the conversion of genomic coordinates from Human Genome version 19 (hg19) to version 38 (hg38) using the liftover plugin from bcftools.
+
+It takes a tab-separated values (TSV) file as input. This file should contain variant information with columns denoting chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
 
 > [!TIP]
 > Advantage of using `BCFtools/liftover` over other tools: [Comparison of features and limitations across `BCFtools/liftover`, `Transanno/liftover`, `Genozip/DVCF`, `GenomeWrap`, `Picard/LiftoverVcf` and `CrossMap/VCF`](https://academic.oup.com/view-large/438467641)
@@ -60,7 +62,8 @@ Replace `/data/test/test.tsv` with your input file, `docker_test` with your desi
 
 ### Example usage
 
-> [!WARNING] The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup. The script also assumes that the input file is properly formatted and contains the necessary columns.
+> [!WARNING]
+> The script assumes that the liftover plugin and reference genomes are located in specific directories. These paths may need to be adjusted based on your specific setup. The script also assumes that the input file is properly formatted and contains the necessary columns.
 
 #### Input file
 
