@@ -82,7 +82,7 @@ cd liftover
 bash liftover_hg19_to_hg38.sh test/test.tsv test_set
 ```
 
-This command will create a directory named `<prefix>_liftover_results`, where <prefix> is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
+This command will create a directory named `<prefix>_liftover_results`, where `<prefix>` is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
 
 Each variant is represented as a row with the following columns:
 
