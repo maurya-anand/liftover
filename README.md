@@ -2,9 +2,9 @@
 
 This script performs the conversion of genomic coordinates from Human Genome version 19 (hg19) to version 38 (hg38) using the liftover plugin from bcftools. It takes a tab-separated values (TSV) file as input. This file should contain variant information with columns denoting chromosome (chr), position (pos), identifier (id), reference allele (ref), and alternate allele (alt).
 
-Read more about the [`BCFtools/liftover` and comparison with tools like `Transanno/liftover`, `Genozip/DVCF`, `GenomeWrap`, `Picard/LiftoverVcf` and `CrossMap/VCF`](https://academic.oup.com/view-large/438467641)
-
-Source: Genovese, Giulio, et al. "BCFtools/Liftover: An Accurate and Comprehensive Tool to Convert Genetic Variants across Genome Assemblies." Bioinformatics, vol. 40, no. 2, 2024, https://doi.org/10.1093/bioinformatics/btae038. Accessed 16 Apr. 2024.
+> [!TIP]
+> Advantage of using `BCFtools/liftover` over other tools: [Comparison of features and limitations across `BCFtools/liftover`, `Transanno/liftover`, `Genozip/DVCF`, `GenomeWrap`, `Picard/LiftoverVcf` and `CrossMap/VCF`](https://academic.oup.com/view-large/438467641) </br>
+> Genovese, Giulio, _et al._ "**BCFtools/Liftover: An Accurate and Comprehensive Tool to Convert Genetic Variants across Genome Assemblies.**" _Bioinformatics_, vol. 40, no. 2, 2024, <https://doi.org/10.1093/bioinformatics/btae038>.
 
 ## Installation
 
