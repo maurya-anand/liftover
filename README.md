@@ -25,8 +25,8 @@ This command will also create a directory named `genomes` and store the download
 
 ### Parameters
 
--   `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
--   `output_prefix`: Prefix for the output file.
+- `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
+- `output_prefix`: Prefix for the output file.
 
 ### Command line
 
@@ -83,15 +83,15 @@ This command will create a directory named `<prefix>_liftover_results`, where <p
 
 Each variant is represented as a row with the following columns:
 
--   `chr`: The chromosome where the variant is located in the target genome assembly.
--   `pos`: The position of the variant on the chromosome in the target genome assembly.
--   `ref`: The reference allele in the target genome assembly.
--   `alt`: The alternate allele in the target genome assembly.
--   `source`: Additional information about the variant in the original genome assembly. This includes:
-    -   `SRC_CHROM`: The chromosome where the variant is located in the original genome assembly.
-    -   `SRC_POS`: The position of the variant on the chromosome in the original genome assembly.
-    -   `SRC_ID`: The identifier of the variant in the original genome assembly.
-    -   `SRC_REF_ALT`: The reference and alternate alleles in the original genome assembly.
+- `chr`: The chromosome where the variant is located in the target genome assembly.
+- `pos`: The position of the variant on the chromosome in the target genome assembly.
+- `ref`: The reference allele in the target genome assembly.
+- `alt`: The alternate allele in the target genome assembly.
+- `source`: Additional information about the variant in the original genome assembly. This includes:
+  - `SRC_CHROM`: The chromosome where the variant is located in the original genome assembly.
+  - `SRC_POS`: The position of the variant on the chromosome in the original genome assembly.
+  - `SRC_ID`: The identifier of the variant in the original genome assembly.
+  - `SRC_REF_ALT`: The reference and alternate alleles in the original genome assembly.
 
 #### Output file
 
@@ -105,18 +105,18 @@ Each variant is represented as a row with the following columns:
 
 ## Steps
 
-1.  Convert the tab-delimited file to a VCF file using the convert_tsv_to_vcf.py Python script.
-2.  Compress the VCF file and generate the index.
-3.  Perform a liftover operation to convert the variants from one genome build to another using bcftools liftover plugin.
-4.  Normalize the VCF file using bcftools.
-5.  Generate a mapping table from the old reference to the new reference using bcftools.
+1. Convert the tab-delimited file to a VCF file using the convert_tsv_to_vcf.py Python script.
+1. Compress the VCF file and generate the index.
+1. Perform a liftover operation to convert the variants from one genome build to another using bcftools liftover plugin.
+1. Normalize the VCF file using bcftools.
+1. Generate a mapping table from the old reference to the new reference using bcftools.
 
 ## Components
 
--   **Tools**
-    -   bgzip
-    -   [tabix](https://doi.org/10.1093/bioinformatics/btq671)
-    -   [bcftools](https://doi.org/10.1093/gigascience/giab008)
-    -   [liftover (plugin)](https://github.com/freeseek/score)
--   **Python3 package**
-    -   pandas
+- **Tools**
+  - bgzip
+  - [tabix](https://doi.org/10.1093/bioinformatics/btq671)
+  - [bcftools](https://doi.org/10.1093/gigascience/giab008)
+  - [liftover (plugin)](https://github.com/freeseek/score)
+- **Python3 package**
+  - pandas
