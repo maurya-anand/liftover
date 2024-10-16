@@ -122,6 +122,6 @@ Each variant is represented as a row with the following columns:
 - **Tools**
   - [htslib v1.19.1](https://www.htslib.org/)
   - [bcftools v1.19](https://doi.org/10.1093/gigascience/giab008)
-  - [liftover (plugin) v1.19-dev](https://github.com/freeseek/score)
+  - [liftover (plugin) v1.20](https://github.com/freeseek/score)
 - **Python3 package**
   - pandas
