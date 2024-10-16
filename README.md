@@ -12,6 +12,22 @@ It takes a tab-separated values (TSV) file as input. This file should contain va
 >
 > Genovese, Giulio, _et al._ "**BCFtools/Liftover: An Accurate and Comprehensive Tool to Convert Genetic Variants across Genome Assemblies.**" _Bioinformatics_, vol. 40, no. 2, 2024, <https://doi.org/10.1093/bioinformatics/btae038>.
 
+## Quickstart
+
+```
+cd liftover
+make help
+
+INSTALLATION
+        Usage: make install SRC=/path/to/your/directory
+        SRC is optional. If SRC is not provided, the files are downloaded to the current directory.
+
+LIFTOVER
+        Usage: make liftover VAR_TAB_FILE=test/test.tsv OUT_PREFIX=test_prefix OUT_DIR=test/ SRC=/path/to/your/directory
+        OUT_DIR is optional. If OUT_DIR is not provided, the output will be stored in the current directory.
+        SRC is optional. If you used a different directory for installation, then specify the path SRC=/path/to/your/directory
+```
+
 ## Installation
 
 > [!IMPORTANT]
@@ -24,16 +40,25 @@ cd liftover
 make install
 ```
 
-This command will also create a directory named `genomes` and store the downloaded genome files in it.
+This command will also create a directory named `genomes` and store the downloaded genome files in it. If `SRC` is not provided, the files are downloaded to the current directory.
 
-## Usage
+## Liftover
+
+### Using the Makefile (recommended)
+
+``` bash
+cd liftover
+make liftover VAR_TAB_FILE=/path/to/your/input_tab_file.tsv OUT_PREFIX=output_prefix
+```
 
 ### Parameters
 
-- `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
-- `output_prefix`: Prefix for the output file.
+- `VAR_TAB_FILE`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
+- `OUT_PREFIX`: Prefix for the output file.
+- `OUT_DIR`: Output directory. (optional)
+- `SRC`: Path to the directory if `make install SRC=/path/to/your/directory` was used during installation. (optional)
 
-### Command line
+### Using the Bash script
 
 After installing the necessary tools and downloading the required genome files using the steps provided in the "Installation" section, you can run the script as follows:
 
@@ -42,7 +67,13 @@ cd liftover
 bash liftover_hg19_to_hg38.sh <input_tab_file> <output_prefix> <output_directory>
 ```
 
-### Docker
+### Parameters
+
+- `input_tab_file`: The input file should be a tab-delimited file containing the following columns: chr, pos, id, ref, and alt.
+- `output_prefix`: Prefix for the output file.
+
+
+### Using Docker
 
 This package is also available as a Docker image, which can be pulled from the GitHub Container Registry using the following command:
 
@@ -82,7 +113,7 @@ Replace `/data/test/test.tsv` with your input file, `docker_test` with your desi
 
 ``` bash
 cd liftover
-bash liftover_hg19_to_hg38.sh test/test.tsv test_set
+make liftover VAR_TAB_FILE=test/test.tsv OUT_PREFIX=test_set
 ```
 
 This command will create a directory named `<prefix>_liftover_results`, where `<prefix>` is the provided prefix, and save the output in a TSV file named `<prefix>_lo_variants.tsv`.
